@@ -1,4 +1,4 @@
-process.stdin.setEncoding('utf-8');
+//process.stdin.setEncoding('utf-8');
 //giprocess.stdin.on('readable', function() {
     // metoda .read() ma za zadanie odczytać co użytkownik podał na wejściu
     /*var input = process.stdin.read();
@@ -16,22 +16,22 @@ process.stdin.setEncoding('utf-8');
 console.log('node version: ' + process.versions.node);
 console.log(process.env.LANG);
 
+process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
 var input = process.stdin.read();
-switch  (input !== null) {
-        case  "a":
-        break;
+    if (input !== null) {
+         var instruction = input.toString().trim();
         
-var instruction = input.toString().trim();
-switch (instruction === '/exit') {
-        case "b":
-        process.stdout.write('Quitting app!\n');
-            process.exit();
-        break;
-        
-    default:
-         process.stderr.write('Wrong instruction!\n');
-        
-}
-                
-}};
+ switch(instruction) {
+            case '/exit':
+                process.stdout.write('Quitting app!\n'');
+                process.exit();
+                break;
+            case '/sayhello':
+                process.stdout.write('hello!\n');
+                break;
+            default:
+                process.stderr.write('Wrong instruction!\n');
+        };
+    }
+});
