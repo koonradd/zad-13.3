@@ -1,5 +1,5 @@
 process.stdin.setEncoding('utf-8');
-process.stdin.on('readable', function() {
+//giprocess.stdin.on('readable', function() {
     // metoda .read() ma za zadanie odczytać co użytkownik podał na wejściu
     /*var input = process.stdin.read();
     if (input !== null) {
@@ -16,7 +16,7 @@ process.stdin.on('readable', function() {
 console.log('node version: ' + process.versions.node);
 console.log(process.env.LANG);
 
-
+process.stdin.on('readable', function() {
 var input = process.stdin.read();
 switch  (input !== null) {
         case  "a":
@@ -34,4 +34,4 @@ switch (instruction === '/exit') {
         
 }
                 
-};
+}};
